@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Portal Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>Login to Exam Portal</h2>
+
+    <!-- Dropdown to select role -->
+    <label for="roleSelect">Select Your Role:</label>
+    <select id="roleSelect" onchange="showRoleForm()">
+        <option value="">Choose Role</option>
+        <option value="admin">Admin</option>
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+    </select>
+
+    <!-- Admin Login Form -->
+    <div id="adminForm" class="role-section" style="display:none;">
+        <table>
+        <h3>Admin Login</h3>
+        <tr>
+            <td>
+                <label for="adminUsername">Username:</label>
+            </td>
+
+            <td>
+                <input type="text" id="adminUsername" placeholder="Enter Admin Username">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="adminPassword">Password:</label>
+            </td>
+            <td>
+                <input type="password" id="adminPassword" placeholder="Enter Admin Password">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="adminCode">Admin Code:</label>
+            </td>
+            <td>
+                <input type="text" id="adminCode" placeholder="Enter Admin Code">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="submitForm('admin')">Submit Admin Login</button>
+            </td>
+        </tr>
+    </table>
+    </div>
+
+    <!-- Student Login Form -->
+    <div id="studentForm" class="role-section" style="display:none;">
+
+        <table>
+        <h3>Student Login</h3>
+        <tr>
+            <td>
+                <label for="studentUsername">Username:</label>
+            </td>
+            <td>
+                <input type="text" id="studentUsername" placeholder="Enter Student Username">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="studentPassword">Password:</label>
+            </td>
+            <td>
+                <input type="password" id="studentPassword" placeholder="Enter Student Password">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="studentID">Student ID:</label>
+            </td>
+            <td>
+                <input type="text" id="studentID" placeholder="Enter Student ID">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="submitForm('student')">Submit Student Login</button>
+            </td>
+        </tr>       
+        
+    </table>
+    </div>
+
+    <!-- Teacher Login Form -->
+    <div id="teacherForm" class="role-section" style="display:none;">
+        <table>
+        <h3>Teacher Login</h3>
+        <tr>
+            <td>
+                <label for="teacherUsername">Username:</label>
+            </td>
+            <td>
+                <input type="text" id="teacherUsername" placeholder="Enter Teacher Username">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="teacherPassword">Password:</label>
+            </td>
+            <td>
+                <input type="password" id="teacherPassword" placeholder="Enter Teacher Password">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="teacherSubject">Subject:</label>
+                
+            </td>
+            <td>
+                <input type="text" id="teacherSubject" placeholder="Enter Subject">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="submitForm('teacher')">Submit Teacher Login</button>
+            </td>
+        </tr>      
+    </table>
+    </div>
+
+    <!-- Message after successful submission -->
+    <div id="message" style="color: green; font-weight: bold;"></div>
+
+    <!-- Display Submitted Details -->
+    <div id="submittedDetails">
+        <h3>Submitted Login Details:</h3>
+        <ul id="loginDetailsList"></ul>
+    </div>
+</body>
+</html>
